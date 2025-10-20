@@ -26,7 +26,7 @@ struct InputView: View {
                     .padding()
                 }
                 if !viewModel.summary.isEmpty {
-                    Text("Summary: \(viewModel.summary)")
+                    Text("Summary: \n\n\(viewModel.summary)")
                         .font(.subheadline)
                         .padding()
                 }

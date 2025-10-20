@@ -15,7 +15,7 @@ final class QuizGenerator {
     func generateQuiz(from text: String) async throws -> [QuizQuestion] {
         let session = LanguageModelSession(model: model, instructions: "You are an educational assistant that creates multiple-choice quizzes for students based on provided text.")
         let prompt = """
-        Generate 3 multiple-choice questions based on this text.
+        Generate 5 multiple-choice questions based on this text.
         Include an explanation for each correct answer.
         Text: \(text)
         """
