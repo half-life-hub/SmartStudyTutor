@@ -8,8 +8,8 @@
 import Foundation
 import FoundationModels
 
-@Guide
-struct QuizQuestion: Generable {
+@Generable
+struct QuizQuestion {
     var question: String
     var choices: [String]
     var correctAnswer: String
