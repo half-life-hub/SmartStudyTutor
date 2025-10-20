@@ -14,4 +14,13 @@ struct QuizQuestion {
     var choices: [String]
     var correctAnswer: String
     var explanation: String
+    
+    static var example: QuizQuestion {
+        QuizQuestion(
+            question: "What is the capital of France?",
+            choices: ["Berlin", "Madrid", "Paris", "Rome"],
+            correctAnswer: "Paris",
+            explanation: "Paris is the capital and largest city of France."
+        )
+    }
 }

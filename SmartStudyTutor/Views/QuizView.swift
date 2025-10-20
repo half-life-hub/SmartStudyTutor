@@ -54,5 +54,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView(questions: [])
+    QuizView(questions: [QuizQuestion.example])
 }
