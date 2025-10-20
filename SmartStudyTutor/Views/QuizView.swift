@@ -34,11 +34,33 @@ struct QuizView: View {
                       : .blue)
             }
             if let answer = selectedAnswer {
-                Text(answer == questions[current].correctAnswer ?
-                     ":white_check_mark: Correct! \(questions[current].explanation)" :
-                     ":x: \(questions[current].explanation)")
-                    .padding()
-                    .animation(.easeIn, value: selectedAnswer)
+                HStack(spacing: 8) {
+                    if answer == questions[current].correctAnswer {
+                        Image(systemName: "checkmark")
+                            .foregroundStyle(.white)
+                            .symbolRenderingMode(.palette)
+                            .font(.title3)
+                            .background(
+                                Circle()
+                                    .fill(Color.green)
+                                    .frame(width: 28, height: 28)
+                            )
+                        Text("Correct! \(questions[current].explanation)")
+                    } else {
+                        Image(systemName: "xmark")
+                            .foregroundStyle(.white)
+                            .symbolRenderingMode(.palette)
+                            .font(.title3)
+                            .background(
+                                Circle()
+                                    .fill(Color.red)
+                                    .frame(width: 28, height: 28)
+                            )
+                        Text(questions[current].explanation)
+                    }
+                }
+                .padding()
+                .animation(.easeIn, value: selectedAnswer)
                 Button("Next") {
                     if current < questions.count - 1 {
                         current += 1
