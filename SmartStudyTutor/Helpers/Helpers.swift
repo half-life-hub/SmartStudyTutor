@@ -10,6 +10,7 @@ import FoundationModels
 
 func summarize(_ text: String) async throws -> String {
     let model = SystemLanguageModel.default
-    let response = try await model.generate("Summarize this text for a student:\n\n\(text)")
-    return response.text
+    let session = LanguageModelSession()
+    let response = try await session.respond(to: "Summarize this text for a student:\n\n\(text)")
+    return response.content
 }
