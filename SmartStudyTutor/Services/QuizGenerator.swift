@@ -19,7 +19,7 @@ final class QuizGenerator {
         Include an explanation for each correct answer.
         Text: \(text)
         """
-        let result = try await session.respond(to: prompt, generating: [QuizQuestion].self)
+        let result = try await session.respond(to: prompt, generating: [QuizQuestion].self, options: GenerationOptions(temperature: 0.5))
         return result.content
     }
 }
