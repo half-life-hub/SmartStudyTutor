@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import FoundationModels
+
+@Guide
+struct QuizQuestion: Generable {
+    var question: String
+    var choices: [String]
+    var correctAnswer: String
+    var explanation: String
+}
